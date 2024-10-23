@@ -5,17 +5,16 @@ import com.comarch.szkolenia.car.rent.gui.GUI;
 
 public class App {
     public static void main(String[] args) {
-        VehicleRepository baza = new VehicleRepository();
-        GUI gui = new GUI();
+        final VehicleRepository baza = new VehicleRepository();
 
         boolean run = true;
         while(run) {
-            switch(gui.showMenuAndReadChoose()) {
+            switch(GUI.showMenuAndReadChoose()) {
                 case "1":
-                    gui.showVehicles(baza.getVehicles());
+                    GUI.showVehicles(baza.getVehicles());
                     break;
                 case "2":
-                    gui.showResult(baza.rentVehicle(gui.readPlate()));
+                    GUI.showResult(baza.rentVehicle(GUI.readPlate()));
                     break;
                 case "3":
                     run = false;

@@ -3,7 +3,7 @@ package com.comarch.szkolenia.car.rent.database;
 import com.comarch.szkolenia.car.rent.model.*;
 
 public class VehicleRepository {
-    private Vehicle[] vehicles = new Vehicle[9];
+    private final Vehicle[] vehicles = new Vehicle[10];
 
     public VehicleRepository() {
         this.vehicles[0] = new Car("BMW", "3", 300.00, 2020, "KR11");
@@ -15,6 +15,7 @@ public class VehicleRepository {
         this.vehicles[6] = new Bus("Mercedes", "Jakis", 600.00, 2021, "KR77", 60);
         this.vehicles[7] = new Truck("Volvo", "Turbo", 900.00, 2021, "KR88", 2000);
         this.vehicles[8] = new LuxuryCar("Bentley", "Continental", 3000.00, 2022, "KR99", 500);
+        this.vehicles[9] = new Motorcycle("Honda", "S1000", 2000.00, 2022, "KR10", false);
     }
 
     public boolean rentVehicle(String plate) {

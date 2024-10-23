@@ -5,39 +5,28 @@ import com.comarch.szkolenia.car.rent.model.*;
 import java.util.Scanner;
 
 public class GUI {
-    private Scanner scanner = new Scanner(System.in);
+    private static final Scanner scanner = new Scanner(System.in);
 
-    public String showMenuAndReadChoose() {
+    public static String showMenuAndReadChoose() {
         System.out.println("1. List cars");
         System.out.println("2. Rent car");
         System.out.println("3. Exit");
 
-        return this.scanner.nextLine();
+        return scanner.nextLine();
     }
 
-    public void showVehicles(Vehicle[] vehicles) {
+    public static void showVehicles(Vehicle[] vehicles) {
         for(Vehicle vehicle : vehicles) {
-            System.out.println(
-                    new StringBuilder()
-                    .append(vehicle.getBrand()).append(" ")
-                    .append(vehicle.getModel()).append(" ")
-                    .append(vehicle.getYear()).append(" ")
-                    .append(vehicle.getPrice()).append(" ")
-                    .append(vehicle.getPlate()).append(" ")
-                            .append(vehicle instanceof Bus ? "Miejsca: " + ((Bus) vehicle).getSeats() : "")
-                            .append(vehicle instanceof Truck ? "Pojemnosc: " + ((Truck) vehicle).getCapacity() : "")
-                            .append(vehicle instanceof LuxuryCar ? "Moc: " + ((LuxuryCar) vehicle).getPower() : "")
-                    .append(vehicle.isRent() ? "Not available" : "Available")
-            );
+            System.out.println(vehicle);
         }
     }
 
-    public String readPlate() {
+    public static String readPlate() {
         System.out.println("Enter plate:");
         return scanner.nextLine();
     }
 
-    public void showResult(boolean result) {
+    public static void showResult(boolean result) {
         System.out.println(result ? "Success !!" : "Error !!");
     }
 }
