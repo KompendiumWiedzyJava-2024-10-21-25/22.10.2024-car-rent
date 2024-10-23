@@ -1,9 +1,6 @@
 package com.comarch.szkolenia.car.rent.gui;
 
-import com.comarch.szkolenia.car.rent.model.Bus;
-import com.comarch.szkolenia.car.rent.model.Car;
-import com.comarch.szkolenia.car.rent.model.Truck;
-import com.comarch.szkolenia.car.rent.model.Vehicle;
+import com.comarch.szkolenia.car.rent.model.*;
 
 import java.util.Scanner;
 
@@ -29,6 +26,7 @@ public class GUI {
                     .append(vehicle.getPlate()).append(" ")
                             .append(vehicle instanceof Bus ? "Miejsca: " + ((Bus) vehicle).getSeats() : "")
                             .append(vehicle instanceof Truck ? "Pojemnosc: " + ((Truck) vehicle).getCapacity() : "")
+                            .append(vehicle instanceof LuxuryCar ? "Moc: " + ((LuxuryCar) vehicle).getPower() : "")
                     .append(vehicle.isRent() ? "Not available" : "Available")
             );
         }
