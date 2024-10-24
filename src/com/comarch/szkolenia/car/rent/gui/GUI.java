@@ -2,6 +2,7 @@ package com.comarch.szkolenia.car.rent.gui;
 
 import com.comarch.szkolenia.car.rent.model.*;
 
+import java.util.Collection;
 import java.util.Scanner;
 
 public class GUI {
@@ -15,7 +16,7 @@ public class GUI {
         return scanner.nextLine();
     }
 
-    public static void showVehicles(Vehicle[] vehicles) {
+    public static void showVehicles(Collection<Vehicle> vehicles) {
         for(Vehicle vehicle : vehicles) {
             System.out.println(vehicle);
         }
